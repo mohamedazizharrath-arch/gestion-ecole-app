@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Overlay sombre -->
+        <View
+            android:id="@+id/overlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/gradient_overlay"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Logo de l'école -->
+        <ImageView
+            android:id="@+id/ivSchoolLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/school"
+            android:contentDescription="Logo École"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="40dp" />
+
+        <!-- Nom de l'école -->
+        <TextView
+            android:id="@+id/tvSchoolName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:shadowColor="#80000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:text="École Primaire Excellence"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivSchoolLogo" />
+
+        <!-- Slogan -->
+        <TextView
+            android:id="@+id/tvSlogan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:shadowColor="#80000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="Éduquer, Inspirer, Réussir"
+            android:textColor="#E8E8E8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSchoolName" />
+
+        <!-- Carte d'informations -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#90FFFFFF"
+            app:layout_constraintTop_toBottomOf="@id/tvSlogan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Informations de l'École"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#3F51B5"
+                    android:layout_gravity="center" />
+
+                <!-- Adresse -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/location"
+                        app:tint="#3F51B5"
+                        android:contentDescription="Location" />
+
+                    <TextView
+                        android:id="@+id/tvAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123 Rue de l'Éducation, 75000 Paris"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <!-- Téléphone -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/call"
+                        app:tint="#3F51B5"
+                        android:contentDescription="Phone" />
+
+                    <TextView
+                        android:id="@+id/tvPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="+33 1 23 45 67 89"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <!-- Email -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/email"
+                        app:tint="#3F51B5"
+                        android:contentDescription="Email" />
+
+                    <TextView
+                        android:id="@+id/tvEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="contact@ecole-excellence.fr"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Section Choix Utilisateur -->
+        <TextView
+            android:id="@+id/tvChooseUser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:shadowColor="#80000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="Choisir votre profil"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardInfo" />
+
+        <!-- Cartes de choix -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardStudent"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@id/tvChooseUser"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="Étudiant"
+                    android:src="@drawable/students" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Étudiant"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:rotationX="2"
+                    android:text="Accéder à mon espace"
+                    android:textColor="#666666"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTeacher"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@id/tvChooseUser"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/teacher"
+                    android:contentDescription="Enseignant" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enseignant"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Accéder à mon espace"
+                    android:textColor="#666666"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
